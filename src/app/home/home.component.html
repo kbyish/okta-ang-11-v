@@ -1,0 +1,19 @@
+<div *ngIf="error" class="error">
+  {{ error }}
+</div>
+
+<h1 class="ui header">Welcome to Premera Memeber web app</h1>
+<div *ngIf="!isAuthenticated">
+  <p> you need to login first </p>
+  <button id="login-button" class="ui primary button" role="button" (click)="login()">Login</button>
+</div>
+
+<div *ngIf="isAuthenticated && userName">
+  <p>Welcome back, {{ userName }}!</p>
+  <p>
+    You have successfully authenticated against your Okta org, and have been redirected back to this application. You
+    now have an ID Token and access token in local storage.
+    Visit the <a href="/profile">My Profile</a> page to take a look inside the ID Token.
+  </p>
+
+</div>
